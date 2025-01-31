@@ -1,0 +1,53 @@
+name: Build and Push Docker Images
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Log in to Docker Hub
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # Set environment variables
+      - name: Set up Docker image tags
+        run: echo "TAG=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
+
+      # Build and push Service A
+      - name: Build and push service_a
+        run: |
+          docker build -t noieee/service_a:${{ env.TAG }} -t noieee/service_a:latest -f Service_A/Dockerfile .
+          docker push noieee/service_a:${{ env.TAG }}
+          docker push noieee/service_a:latest
+
+      # Build and push Service B
+      - name: Build and push service_b
+        run: |
+          docker build -t noieee/service_b:${{ env.TAG }} -t noieee/service_b:latest -f Service_B/Dockerfile .
+          docker push noieee/service_b:${{ env.TAG }}
+          docker push noieee/service_b:latest
+
+      # Build and push Service C
+      - name: Build and push service_c
+        run: |
+          docker build -t noieee/service_c:${{ env.TAG }} -t noieee/service_c:latest -f Service_C/Dockerfile .
+          docker push noieee/service_c:${{ env.TAG }}
+          docker push noieee/service_c:latest
