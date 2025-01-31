@@ -1,0 +1,24 @@
+﻿services:
+  service_a:
+    image: noieee/service_a
+    build:
+      context: .
+      dockerfile: Service_A/Dockerfile
+    ports:
+      - "8080:8080"
+
+  service_b:
+    image: noieee/service_b
+    build:
+      context: .
+      dockerfile: Service_B/Dockerfile
+    ports:
+      - "8081:8080"
+
+  service_c:
+    image: noieee/service_c
+    build:
+      context: .
+      dockerfile: Service_C/Dockerfile
+    ports:
+      - "8082:8080"

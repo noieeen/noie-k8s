@@ -1,0 +1,62 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  service_a:
+    build:
+      context: "/Users/tharinchemchan/RiderProjects/NetK8S"
+      dockerfile: "Service_A/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/Service_A.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_STATICWEBASSETS: "/app/bin/Debug/net8.0/Service_A.staticwebassets.runtime.CT.json"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "service_a:dev"
+    ports: []
+    volumes:
+    - "/Users/tharinchemchan/RiderProjects/NetK8S/Service_A:/app:rw"
+    - "/Users/tharinchemchan/RiderProjects/NetK8S:/src:rw"
+    - "/Users/tharinchemchan/.nuget/packages:/home/app/.nuget/packages"
+    working_dir: "/app"
+  service_b:
+    build:
+      context: "/Users/tharinchemchan/RiderProjects/NetK8S"
+      dockerfile: "Service_B/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/Service_B.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_STATICWEBASSETS: "/app/bin/Debug/net8.0/Service_B.staticwebassets.runtime.CT.json"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "service_b:dev"
+    ports: []
+    volumes:
+    - "/Users/tharinchemchan/RiderProjects/NetK8S/Service_B:/app:rw"
+    - "/Users/tharinchemchan/RiderProjects/NetK8S:/src:rw"
+    - "/Users/tharinchemchan/.nuget/packages:/home/app/.nuget/packages"
+    working_dir: "/app"
+  service_c:
+    build:
+      context: "/Users/tharinchemchan/RiderProjects/NetK8S"
+      dockerfile: "Service_C/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/Service_C.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_STATICWEBASSETS: "/app/bin/Debug/net8.0/Service_C.staticwebassets.runtime.CT.json"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "service_c:dev"
+    ports: []
+    volumes:
+    - "/Users/tharinchemchan/RiderProjects/NetK8S/Service_C:/app:rw"
+    - "/Users/tharinchemchan/RiderProjects/NetK8S:/src:rw"
+    - "/Users/tharinchemchan/.nuget/packages:/home/app/.nuget/packages"
+    working_dir: "/app"

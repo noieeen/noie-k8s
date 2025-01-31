@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service_A", "Service_A\Service_A.csproj", "{74F3A37F-E2B2-43C7-99D2-8DCC6E12D608}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{763CABB8-B65C-4E97-B93B-711E17BDCA27}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service_B", "Service_B\Service_B.csproj", "{0DFEAE3A-02B9-40AD-9C9D-1ADC60FD73FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service_C", "Service_C\Service_C.csproj", "{4931CDEB-8009-44A5-A196-A0E778BECFDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74F3A37F-E2B2-43C7-99D2-8DCC6E12D608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74F3A37F-E2B2-43C7-99D2-8DCC6E12D608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74F3A37F-E2B2-43C7-99D2-8DCC6E12D608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74F3A37F-E2B2-43C7-99D2-8DCC6E12D608}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DFEAE3A-02B9-40AD-9C9D-1ADC60FD73FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DFEAE3A-02B9-40AD-9C9D-1ADC60FD73FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DFEAE3A-02B9-40AD-9C9D-1ADC60FD73FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DFEAE3A-02B9-40AD-9C9D-1ADC60FD73FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4931CDEB-8009-44A5-A196-A0E778BECFDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4931CDEB-8009-44A5-A196-A0E778BECFDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4931CDEB-8009-44A5-A196-A0E778BECFDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4931CDEB-8009-44A5-A196-A0E778BECFDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
