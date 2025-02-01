@@ -13,7 +13,7 @@ services:
       ASPNETCORE_ENVIRONMENT: "Development"
       ASPNETCORE_STATICWEBASSETS: "/app/bin/Debug/net8.0/Service_A.staticwebassets.runtime.CT.json"
       DOTNET_USE_POLLING_FILE_WATCHER: "true"
-    image: "service_a:dev"
+    image: "noieee/service_a:dev"
     ports: []
     volumes:
     - "/Users/tharinchemchan/RiderProjects/NetK8S/Service_A:/app:rw"
@@ -33,7 +33,7 @@ services:
       ASPNETCORE_ENVIRONMENT: "Development"
       ASPNETCORE_STATICWEBASSETS: "/app/bin/Debug/net8.0/Service_B.staticwebassets.runtime.CT.json"
       DOTNET_USE_POLLING_FILE_WATCHER: "true"
-    image: "service_b:dev"
+    image: "noieee/service_b:dev"
     ports: []
     volumes:
     - "/Users/tharinchemchan/RiderProjects/NetK8S/Service_B:/app:rw"
@@ -53,7 +53,7 @@ services:
       ASPNETCORE_ENVIRONMENT: "Development"
       ASPNETCORE_STATICWEBASSETS: "/app/bin/Debug/net8.0/Service_C.staticwebassets.runtime.CT.json"
       DOTNET_USE_POLLING_FILE_WATCHER: "true"
-    image: "service_c:dev"
+    image: "noieee/service_c:dev"
     ports: []
     volumes:
     - "/Users/tharinchemchan/RiderProjects/NetK8S/Service_C:/app:rw"
