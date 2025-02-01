@@ -8,8 +8,8 @@ on:
     branches:
       - main
 
-#jobs:
-#  build-and-push:
+jobs:
+  build-and-push:
 #    runs-on: ubuntu-latest
 #    permissions:
 #      contents: read

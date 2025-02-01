@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://hub.docker.com/
-        username: ${{ secrets.AzureAppService_ContainerUsername_290590833df0435a93a784250dbe69db }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_33f11dd5a9b74fbabc422a0628ee795a }}
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: hub.docker.com/${{ secrets.AzureAppService_ContainerUsername_290590833df0435a93a784250dbe69db }}/noieee/service_a:${{ github.sha }}
+        tags: hub.docker.com/${{ secrets.DOCKER_USERNAME }}/service_a:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'k8s-service'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_70e0d4c8f4ce4d3a99d4bdebf5bee4f1 }}
-        images: 'hub.docker.com/${{ secrets.AzureAppService_ContainerUsername_290590833df0435a93a784250dbe69db }}/noieee/service_a:${{ github.sha }}'
+        images: 'hub.docker.com/${{ secrets.DOCKER_USERNAME }}/service_a:${{ github.sha }}'
