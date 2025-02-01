@@ -1,13 +1,13 @@
 #name: Build and Push Docker Images
-#
-#on:
-#  push:
-#    branches:
-#      - main
-#  pull_request:
-#    branches:
-#      - main
-#
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 #jobs:
 #  build-and-push:
 #    runs-on: ubuntu-latest
