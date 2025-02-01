@@ -30,7 +30,7 @@ jobs:
       with:
         push: true
         tags: hub.docker.com/${{ secrets.DOCKER_USERNAME }}/service_a:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./Service_A/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
