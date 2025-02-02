@@ -20,4 +20,4 @@ RUN dotnet publish "Service_A.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Service_A.dll", "--urls", "http://0.0.0.0:80"]
+ENTRYPOINT ["dotnet", "Service_A.dll", "--urls", "http://0.0.0.0:8080"]

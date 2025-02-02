@@ -60,3 +60,22 @@ services:
     - "/Users/tharinchemchan/RiderProjects/NetK8S:/src:rw"
     - "/Users/tharinchemchan/.nuget/packages:/home/app/.nuget/packages"
     working_dir: "/app"
+  service_d:
+    build:
+      context: "/Users/tharinchemchan/RiderProjects/NetK8S"
+      dockerfile: "Service_D/Dockerfile"
+      target: "build"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/Service_D.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_STATICWEBASSETS: "/app/bin/Debug/net8.0/Service_D.staticwebassets.runtime.CT.json"
+    image: "noieee/service_d:dev"
+    ports: []
+    volumes:
+    - "/Users/tharinchemchan/RiderProjects/NetK8S/Service_D:/app:rw"
+    - "/Users/tharinchemchan/RiderProjects/NetK8S:/src:rw"
+    - "/Users/tharinchemchan/.nuget/packages:/root/.nuget/packages"
+    working_dir: "/app"

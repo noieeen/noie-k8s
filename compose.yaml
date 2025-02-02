@@ -22,3 +22,11 @@
       dockerfile: Service_C/Dockerfile
     ports:
       - "8082:8080"
+
+  service_d:
+    image: noieee/service_d
+    build:
+      context: .
+      dockerfile: Service_D/Dockerfile
+    ports:
+        - "8083:8080"

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service_B", "Service_B\Serv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service_C", "Service_C\Service_C.csproj", "{4931CDEB-8009-44A5-A196-A0E778BECFDC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service_D", "Service_D\Service_D.csproj", "{A86ADE6D-A204-43DE-A3CC-BF7F8442ABE5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,5 +31,9 @@ Global
 		{4931CDEB-8009-44A5-A196-A0E778BECFDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4931CDEB-8009-44A5-A196-A0E778BECFDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4931CDEB-8009-44A5-A196-A0E778BECFDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A86ADE6D-A204-43DE-A3CC-BF7F8442ABE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A86ADE6D-A204-43DE-A3CC-BF7F8442ABE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A86ADE6D-A204-43DE-A3CC-BF7F8442ABE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A86ADE6D-A204-43DE-A3CC-BF7F8442ABE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
