@@ -50,12 +50,12 @@ jobs:
       name: 'production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
-    steps:
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: 'k8s-service'
-          slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_70e0d4c8f4ce4d3a99d4bdebf5bee4f1 }}
-          images: 'hub.docker.com/${{ secrets.DOCKER_USERNAME }}/service_a:latest'
+#    steps:
+#      - name: Deploy to Azure Web App
+#        id: deploy-to-webapp
+#        uses: azure/webapps-deploy@v2
+#        with:
+#          app-name: 'k8s-service'
+#          slot-name: 'production'
+#          publish-profile: ${{ secrets.AzureAppService_PublishProfile_70e0d4c8f4ce4d3a99d4bdebf5bee4f1 }}
+#          images: 'hub.docker.com/${{ secrets.DOCKER_USERNAME }}/service_a:latest'
