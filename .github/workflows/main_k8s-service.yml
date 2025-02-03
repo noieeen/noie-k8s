@@ -14,34 +14,34 @@ jobs:
     runs-on: 'ubuntu-latest'
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
 
-    - name: Log in to registry
-      uses: docker/login-action@v3
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Log in to registry
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
         
-      # Set environment variables
-    - name: Set up Docker image tags
-      run: echo "TAG=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
-        
-#    - name: Build and push container image to registry
-#      uses: docker/build-push-action@v3
-#      with:
-#        push: true
-#        tags: hub.docker.com/${{ secrets.DOCKER_USERNAME }}/service_a:${{ env.TAG }}
-#        file: ./Service_A/Dockerfile
-    
-    # Build and push Service A
-    - name: Build and push service_a
-      run: |
-        docker build -t noieee/service_a:${{ env.TAG }} -t noieee/service_a:latest -f Service_A/Dockerfile .
-        docker push noieee/service_a:${{ env.TAG }}
-        docker push noieee/service_a:latest
+        # Set environment variables
+      - name: Set up Docker image tags
+        run: echo "TAG=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
+      
+      #    - name: Build and push container image to registry
+      #      uses: docker/build-push-action@v3
+      #      with:
+      #        push: true
+      #        tags: hub.docker.com/${{ secrets.DOCKER_USERNAME }}/service_a:${{ env.TAG }}
+      #        file: ./Service_A/Dockerfile
+      
+      # Build and push Service A
+      - name: Build and push service_a
+        run: |
+          docker build -t noieee/service_a:${{ env.TAG }} -t noieee/service_a:latest -f Service_A/Dockerfile .
+          docker push noieee/service_a:${{ env.TAG }}
+          docker push noieee/service_a:latest
   
   deploy:
     runs-on: ubuntu-latest
@@ -51,11 +51,14 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
-    - name: Deploy to Azure Web App
-      id: deploy-to-webapp
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: 'k8s-service'
-        slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_70e0d4c8f4ce4d3a99d4bdebf5bee4f1 }}
-        images: 'hub.docker.com/${{ secrets.DOCKER_USERNAME }}/service_a:latest'
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'k8s-service'
+          slot-name: 'production'
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_70e0d4c8f4ce4d3a99d4bdebf5bee4f1 }}
+          images: 'hub.docker.com/${{ secrets.DOCKER_USERNAME }}/service_a:latest'
+     
+      - name: Docker Start
+        run: docker run

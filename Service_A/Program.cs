@@ -20,6 +20,17 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+// app.UseEndpoints(endpoints =>
+// {
+//     // Area - Api
+//     CDP_Action_Api_RouteConfig.Config(endpoints);
+//
+//     endpoints.MapControllerRoute(
+//         name: "default",
+//         pattern: "{controller=Home}/{action=Index}/{id?}",
+//         defaults: new { controller = "Home", action = "Index" });
+// });
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
