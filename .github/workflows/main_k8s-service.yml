@@ -59,6 +59,3 @@ jobs:
           slot-name: 'production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_70e0d4c8f4ce4d3a99d4bdebf5bee4f1 }}
           images: 'hub.docker.com/${{ secrets.DOCKER_USERNAME }}/service_a:latest'
-     
-      - name: Docker Start
-        run: docker run
